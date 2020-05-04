@@ -1,4 +1,4 @@
-# JavaGS
+# JavaRS
 
 This is an adaptation of Genesis Code, a new generation erasure code
 technology developed by Genesis Codes inventor Anthony Mai, into the
