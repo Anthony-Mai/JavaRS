@@ -11,7 +11,7 @@ There is an overview of how the Reed Solomon algorithm works in their
 Reed Solomon Code, invented in 1960 and refined over the years, is
 slow and inefficient, with computation complexity increases in the
 quadratic power of code length. Genesis Codes is a superior replacement
-with complexity scales only linearly, or even su-linearly in some cases.
+with complexity scales only linearly, or even sub-linearly in some cases.
 
 The ReedSolomon class does the encoding and decoding, and is supported
 by Matrix, which does matrix arithmetic, and Galois, which is a finite
