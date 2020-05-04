@@ -79,3 +79,4 @@ storage pod:
 ```
 
 ![Bar Chart of Benchmark Results](notes/benchmark_on_storage_pod.png)
+![Genesis Codes (16,3) Benchmark Results](notes/JavaRS_Speed.png)
