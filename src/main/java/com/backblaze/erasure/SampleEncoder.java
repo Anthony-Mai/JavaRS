@@ -30,9 +30,9 @@ import java.nio.ByteBuffer;
  */
 public class SampleEncoder {
 
-    public static final int DATA_SHARDS = 4;
-    public static final int PARITY_SHARDS = 2;
-    public static final int TOTAL_SHARDS = 6;
+    public static final int DATA_SHARDS = 17; // Was 4
+    public static final int PARITY_SHARDS = 3; // Was 2
+    public static final int TOTAL_SHARDS = 20; // Was 4+2=6
 
     public static final int BYTES_IN_INT = 4;
 
@@ -79,8 +79,13 @@ public class SampleEncoder {
         }
 
         // Use Reed-Solomon to calculate the parity.
+        System.out.println("ReedSolomon encode using (" + DATA_SHARDS + "," + PARITY_SHARDS + ") mode");
+        long startTime = System.currentTimeMillis();
         ReedSolomon reedSolomon = ReedSolomon.create(DATA_SHARDS, PARITY_SHARDS);
         reedSolomon.encodeParity(shards, 0, shardSize);
+        long endTime = System.currentTimeMillis();
+        float encodeRate = (shardSize * DATA_SHARDS) / (endTime-startTime) / 1000.0f;
+        System.out.println("ReedSolomon encode throughput is " + encodeRate + " MB/second.");
 
         // Write out the resulting files.
         for (int i = 0; i < TOTAL_SHARDS; i++) {
